@@ -1,0 +1,72 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Dino's Pizza Parlor</title>
+</head>
+
+<body>
+<h1>Dino's Pizza Parlor</h1>
+
+<h3>Step 1: Enter your name, address, and phone number: </h3>
+
+
+<form id="pizzaform" action="threeOrder.php" method="post">
+
+Name: <input name="customer" size="52" type="text" required/> <br/>
+Address: <input name="address" size="50" type="text" required/> <br/>
+City: <input name="city" size="28" type="text" required/>
+State: <input name="state" size="4" type="text" required/>
+Zip: <input name="zip" size="7" type="text"required/><br/>
+Phone Number: <input name="phone" size="14" type="text" required/>
+
+
+<h3>Step 2: Select the size of pizza you want: </h3>
+<table>
+<tr>
+	<td><input name="sizes" type="radio" value="small" required/> Small </td>
+	<td><input name="sizes" type="radio" value="medium"/> Medium </td>
+	<td><input name="sizes" type="radio" value="large"/> Large </td>
+</tr>
+</table>
+
+<h3>Step 3: Select the pizza toppings you want: </h3>
+<table>
+	<tr>
+		<td> <input name="toppings[]" type="checkbox" value="pepperoni"/> Pepperoni </td>
+		<td><input name="toppings[]" type="checkbox" value="mushroom"/> Mushroom </td>
+		<td><input name="toppings[]" type="checkbox" value="bacon"/> Canadian Bacon </td>
+	</tr>
+	<tr>
+		<td><input name="toppings[]" type="checkbox" value="sausage"/> Sausage </td>
+		<td><input name="toppings[]" type="checkbox" value="pineapple"/> Pineapple </td>
+		<td><input name="toppings[]" type="checkbox" value="olives"/> Black Olives </td>
+	</tr>
+</table>
+
+<br/>
+
+<table>
+	<tr>
+		<td><input type="submit" value="Submit Order" id="submit"/></td>
+		<td><input type="button" value="Clear Entries" onclick="resetForm()" id="clearentries"></td>
+	</tr>
+</table>
+
+
+</form>
+
+
+
+	<script>
+		function resetForm() {
+			document.getElementById("pizzaform").reset();
+		}
+	</script>
+
+</body>
+</html>
